@@ -1,0 +1,39 @@
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm1.aspx.vb" Inherits="request_and_response.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        NAME
+        <asp:TextBox ID="NAME" runat="server"></asp:TextBox>
+        <br />
+        ROLLNO
+        <asp:TextBox ID="ROLLNO" runat="server"></asp:TextBox>
+        <br />
+        MARK
+        <asp:TextBox ID="MARK" runat="server"></asp:TextBox>
+    
+    </div>
+        <asp:Button ID="Button1" runat="server" Text="Button" />
+    </form>
+</body>
+</html>
+...........................................................................................
+Public Class WebForm1
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+    End Sub
+
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Response.Write("NAME" & Request.Form("NAME") & "<br>" & "ROLLNO" &
+Request.Form("ROLLNO") & "<br>" & "MARK" & Request.Form("MARK") & "<br>")
+    End Sub
+End Class
